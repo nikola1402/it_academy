@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Računanje zapremine valjka</title>
+
+    <style>
+
+        #container {
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        #gridContainer {
+            display: inline-grid;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        label {
+            grid-column: 1;
+            margin-right: 3rem;
+        }
+
+        input {
+            grid-column: 3;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="container">
+
+        <h1>Unesite neophodne vrednosti za izračunavanje zapremine valjka:</h1>
+
+        <div id="gridContainer">
+            <label>Poluprečnik:</label>
+            <input type="text" id="radius"><br><br>
+            <label>Visina:</label>
+            <input type="text" id="height"><br><br>
+
+            <input type="submit" value="Izračunaj" onclick="calculateVolume();">
+
+        </div>
+
+        <div id="result"></div>
+
+    </div>
+
+    <script>
+
+        function calculateVolume() {
+            var radius = parseInt(document.getElementById('radius').value);
+            var height = parseInt(document.getElementById('height').value);
+
+            if (Number.isNaN(radius) || Number.isNaN(height)) {
+                document.getElementById("result").innerHTML = "<p>Molimo vas da ne koristite karaktere koji nisu brojevi kako biste uspešno izračunali zapreminu.</p>";
+            } else {
+                var result = Math.pow(radius, 2) * Math.PI * height;
+                document.getElementById("result").innerHTML = "<p>Izračunata zapremina valjka je: " + result + "</p>";
+            }
+
+        }
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function Person(name, address, phone) {
+            this.name = name;
+            this.address = address;
+            this.phone = phone;
+        }
+
+        Person.prototype.getInfo = function() {
+            return "Name: " + this.name + "\nAddress: " + this.address + "\nPhone: " + this.phone
+        }
+
+        function Student(name, address, phone, course) {
+            Person.call(this, name, address, phone);
+            this.course = course;
+        }
+
+        Student.prototype = Object.create(Person.prototype);
+        Student.prototype.constructor = Student;
+
+        Student.prototype.getInfo = function () {
+            return Person.prototype.getInfo.call(this) + "\nCourse: " + this.course;
+        }
+
+        let student1 = new Student("Marko Markovic", "Ulica prva br. 1", "063123456", "Web Development");
+        let student2 = new Student("Ivana Ivanovic", "Ulica druga br. 2", "0647890123", "Computer Engineering");
+        let student3 = new Student("Petar Petrovic", "Ulica treca br. 3", "0659876543", "Java Development");
+
+        console.log(student1.getInfo())
+        console.log(student2.getInfo())
+        console.log(student3.getInfo())
+
+    </script>
+
+</body>
+
+</html>

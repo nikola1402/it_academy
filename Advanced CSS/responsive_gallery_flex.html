@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Gallery</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        #container {
+            margin: 0 auto;
+            width: 75%;
+        }
+
+        #gallery {
+            display: flex;
+            flex-direction: column;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        img:hover {
+            box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        }
+
+        .row {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            gap: 3rem;
+        }
+
+        .column {
+            flex-basis: 14.666%;
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid rgb(219, 216, 216);
+            border-radius: 5%;
+            margin-left: 0;
+            margin-right: 0;
+            background: #5289cc;
+            overflow: hidden;
+        }
+
+        figcaption {
+            width: 100%;
+            padding: 5px;
+            background: rgb(207, 229, 255);
+        }
+
+        @media screen and (max-width: 1024px) {
+            .column {
+                flex-basis: 27%;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .column {
+                flex-basis: 50%;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            #container {
+                width: 65%;
+            }
+        }
+
+        @media screen and (max-width: 414px) {
+            .column {
+                flex-basis: 100%;
+                margin-left: 2rem;
+                margin-right: 2rem;
+            }
+
+            #container {
+                text-align: center;
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <div id="gallery">
+            
+            <h1>Gallery Heading</h1>
+
+            <div class="row">
+                <figure class="column">
+                    <img src="placeholder-image.png" alt="placeholder-image">
+                    <figcaption>Image Title</figcaption>
+                </figure>
+                <figure class="column">
+                    <img src="placeholder-image.png" alt="placeholder-image">
+                    <figcaption>Image Title</figcaption>
+                </figure>
+                <figure class="column">
+                    <img src="placeholder-image.png" alt="placeholder-image">
+                    <figcaption>Image Title</figcaption>
+                </figure>
+                <figure class="column">
+                    <img src="placeholder-image.png" alt="placeholder-image">
+                    <figcaption>Image Title</figcaption>
+                </figure>
+                <figure class="column">
+                    <img src="placeholder-image.png" alt="placeholder-image">
+                    <figcaption>Image Title</figcaption>
+                </figure>
+                <figure class="column">
+                    <img src="placeholder-image.png" alt="placeholder-image">
+                    <figcaption>Image Title</figcaption>
+                </figure>
+                <figure class="column">
+                    <img src="placeholder-image.png" alt="placeholder-image">
+                    <figcaption>Image Title</figcaption>
+                </figure>
+                <figure class="column">
+                    <img src="placeholder-image.png" alt="placeholder-image">
+                    <figcaption>Image Title</figcaption>
+                </figure>
+                <figure class="column">
+                    <img src="placeholder-image.png" alt="placeholder-image">
+                    <figcaption>Image Title</figcaption>
+                </figure>
+                <figure class="column">
+                    <img src="placeholder-image.png" alt="placeholder-image">
+                    <figcaption>Image Title</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sem augue, venenatis vitae pretium ac,
+            egestas id nunc. Suspendisse volutpat, magna quis aliquam blandit, velit eros accumsan leo, eget cursus
+            nulla
+            tortor in neque. Integer at congue elit, sed dapibus lorem. Fusce a libero et nibh molestie elementum. Donec
+            interdum vel risus congue laoreet. Sed ut dolor non metus laoreet posuere. Ut efficitur dictum tortor sit
+            amet
+            euismod. Sed semper nunc et diam commodo, bibendum consequat eros tincidunt. Donec vulputate condimentum
+            eleifend. Mauris ac augue ultricies, pretium sapien vel, sodales magna. Aliquam tempor ante blandit lacus
+            efficitur ullamcorper. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin vel ligula nec
+            nunc
+            condimentum ullamcorper ut eu velit. </p>
+    </div>
+
+</body>
+
+</html>

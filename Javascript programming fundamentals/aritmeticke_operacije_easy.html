@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aritmetičke operacije</title>
+
+</head>
+<body onload="start();">
+
+    <script>
+
+        function start() {
+
+            var result
+
+            var num1 = parseInt(prompt("Please enter first number:"));
+
+            if (Number.isNaN(num1)) {
+                alert("Please enter a valid number and start from the beginning!");
+                start();
+            }
+
+            var operation = prompt("Please enter one of the following operations: \n\n+ \n- \n* \n/")
+
+            if (operation !== "+" && operation !== "-" && operation !== "*" && operation !== "/") {
+                alert("Bad operation selected! Please start from the beginning");
+                start();
+            }
+
+            var num2 = parseInt(prompt("Please enter second number:"));
+            if (Number.isNaN(num2)) {
+                alert("Please enter a valid number and start from the beginning!");
+                start();
+            }
+
+            if (operation === "+") {
+                result = num1 + num2;
+            } else if (operation === "-") {
+                result = num1 - num2;
+            } else if (operation === "*") {
+                result = num1 * num2;
+            } else {
+                result = num1 / num2;
+            } 
+
+            if (confirm("Your result is: " + result + "\n\nWould you like to make another calculation?")) {
+                start();
+            }
+        }
+
+        
+    </script>
+
+    
+</body>
+</html>
